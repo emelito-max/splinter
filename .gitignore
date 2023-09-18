@@ -1,1 +1,8 @@
-.env
+/client/.env
+/server/.env
+
+/server/bin
+/client/bin
+/server/bin/server
+/client/bin/client
+
