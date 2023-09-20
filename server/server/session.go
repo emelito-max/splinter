@@ -5,7 +5,8 @@ import "net/http"
 type SessionHandler struct {
 	// ...
 
-	ID string
+	ID       int
+	lifetime int
 }
 
 func NewSessionHandler() *SessionHandler {
@@ -14,7 +15,12 @@ func NewSessionHandler() *SessionHandler {
 	return sessionHandler
 }
 
-func (s *SessionHandler) GetID() string {
+func (s *SessionHandler) SetID(sessionID int) {
+	s.ID = sessionID
+	return
+}
+
+func (s *SessionHandler) GetID() int {
 	return s.ID
 }
 
