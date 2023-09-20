@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"math/rand"
 	"net/http"
 	"os"
 	"time"
@@ -46,11 +47,17 @@ func sendRequest() {
 		return
 	}
 
-	req.Header.Add("session_id", "123456789")
+	// generate a random session id
+	rand.Seed(time.Now().UnixNano())
+	sessionID := rand.Intn(1000000000)
+	sessionIDtest := string(rune(sessionID))
+	fmt.Println("Session ID:", sessionIDtest)
+
+	req.Header.Add("session_id", string(rune(sessionID)))
 
 	// Create an Http client
 	client := http.Client{
-		Timeout: time.Second * 10,
+		Timeout: time.Second * 1,
 	}
 
 	// Send the request
