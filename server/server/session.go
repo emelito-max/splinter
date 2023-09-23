@@ -4,7 +4,6 @@ import "net/http"
 
 type SessionHandler struct {
 	// ...
-
 	ID       int
 	lifetime int
 }

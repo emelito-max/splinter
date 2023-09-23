@@ -32,6 +32,7 @@ func NewController() *Controller {
 }
 
 func (c *Controller) Run() {
+
 }
 
 func (c *Controller) HandleSession(sessionID string) {
