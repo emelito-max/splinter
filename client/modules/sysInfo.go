@@ -16,7 +16,10 @@ func fetchInfo() {
 	fmt.Print("INFO: Computer Name: \n", computerName)
 
 	// get IP address
-	ipaddr, _ := net.InferfaceAddr()
+	ipaddr, _ := net.InterfaceAddrs()
+	for _, address := range ipaddr {
+		fmt.Printf("INFO: IP Address: %s\n", address)
+	}
 
 	// get MAC address
 	interfaces, _ := net.Interfaces()
