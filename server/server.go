@@ -16,8 +16,8 @@ func main() {
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		fmt.Fprintf(w, "Hello World")
 		controller.HandleRequest(r, w)
-		fmt.Println("INFO: Listening with controller")
 	})
 	// switch to https
 	http.ListenAndServe(":8080", nil)
+
 }
